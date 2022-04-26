@@ -15,6 +15,56 @@ class _HomePageState extends State<HomePage> {
       appBar: AppBar(
         title: Text('AppBar'),
       ),
+
+      drawer:  
+        Drawer( //Cria um menu lateral
+          child: ListView(
+            children: [
+              UserAccountsDrawerHeader  ( //Cabeçalho do Drawer
+                accountName: Text('Ana Paula'), 
+              accountEmail: Text('anapaulapires@gmail.com'),
+              currentAccountPicture: CircleAvatar(
+                child: Text('A'),
+                backgroundColor: Colors.yellow,
+                ),
+              ),
+              ListTile(
+                title: Text('Item 1'),
+                trailing: Icon(Icons.arrow_forward),
+                onTap: (){
+                  _pageController.jumpToPage(0);
+                  Navigator.pop(context);
+                  setState(() {
+                    indexBottomNavigationBar = 0;
+                  });
+                },
+              ),
+              ListTile(
+              title: Text('Item 2'),
+              trailing: Icon(Icons.arrow_forward),
+               onTap: (){
+                  _pageController.jumpToPage(1);
+                  Navigator.pop(context);
+                  setState(() {
+                    indexBottomNavigationBar = 1;
+                  });
+                },
+            ),
+              ListTile(
+              title: Text('Item 3'),
+              trailing: Icon(Icons.arrow_forward),
+               onTap: (){
+                  _pageController.jumpToPage(2);
+                  Navigator.pop(context);
+                  setState(() {
+                    indexBottomNavigationBar = 2;
+                  });
+                },
+            ),
+            ],
+          ),
+        ) ,
+
       body: PageView(
         controller: _pageController,
         children: [
@@ -48,9 +98,9 @@ class _HomePageState extends State<HomePage> {
                   Container(
                     color: Colors.redAccent,
                     height: 100,
-                    width: 228,
+                    width: 175,
                     child: Center(child: Text('Container 2')),
-                  ),
+                  ), 
                 ],
               )
             ],
