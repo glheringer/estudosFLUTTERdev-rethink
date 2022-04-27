@@ -6,7 +6,7 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
-  PageController _pageController = PageController();
+  PageController _pageController = PageController(); 
   int indexBottomNavigationBar = 0; // Variável Indice da nav bar de baixo
 
   @override
