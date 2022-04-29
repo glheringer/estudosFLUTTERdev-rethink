@@ -1,3 +1,4 @@
+import 'package:aula_05/services/prefs_service.dart';
 import 'package:flutter/material.dart';
 
 class LoginController{
@@ -12,6 +13,10 @@ class LoginController{
     inLoader.value = true;
     await Future.delayed(Duration(seconds: 2)); //await para so prosseguir dps de fazer essa operacao
     inLoader.value = false;
-    return _login == 'admin' && _pass == '123';
+    if (_login == 'admin' && _pass == '123'){
+      PrefsService.save(_login!);
+      return true;
+    }
+    return false;
   }
 }

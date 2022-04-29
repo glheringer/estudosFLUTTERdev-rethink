@@ -1,3 +1,4 @@
+import 'package:aula_05/pages/details_page.dart';
 import 'package:aula_05/pages/home_page.dart';
 import 'package:aula_05/pages/login_page.dart';
 import 'package:aula_05/pages/splash_page.dart';
@@ -24,6 +25,7 @@ class MyApp extends StatelessWidget {
           '/splash': (_) => const SplashPage(),
           '/login': (_) => LoginPage(),
           '/home': (_) => const HomePage(),
+          '/details': (_) => DetailsPage(),
         });
   }
 }
